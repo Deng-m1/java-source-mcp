@@ -1,0 +1,45 @@
+{
+  "name": "java-decompiler-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for decompiling Java dependencies",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "node dist/index.js",
+    "dev": "npx tsc && node dist/index.js",
+    "test": "node test-example.js",
+    "test:unit": "node tests/test-runner.js",
+    "test:mcp": "node tests/mcp-tools-test.js",
+    "test:project": "node tests/project-specific-test.js",
+    "test:all": "npm run build && npm run test:unit && npm run test:mcp && npm run test:project",
+    "setup": "node scripts/auto-setup.js",
+    "package": "node scripts/package-for-migration.js",
+    "install:win": "scripts/install.bat",
+    "install:unix": "chmod +x scripts/install.sh && ./scripts/install.sh"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.6.0",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2",
+    "yauzl": "^3.2.0",
+    "archiver": "^7.0.1",
+    "jszip": "^3.10.1",
+    "typescript": "^5.8.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.19.0",
+    "@types/xml2js": "^0.4.14",
+    "@types/yauzl": "^2.10.3"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "mcp",
+    "java",
+    "decompiler",
+    "maven"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
